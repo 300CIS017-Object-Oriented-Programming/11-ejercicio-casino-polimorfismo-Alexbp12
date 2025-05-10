@@ -13,6 +13,7 @@
 #include "Mayor13.h"
 #include "DosColores.h"
 #include "Slots.h"
+#include "CaraOSello.h"
 
 
 using std::cin;
@@ -51,6 +52,7 @@ public:
 
     void recargarGonzos(long idJugador);
 
+    void mostrarReglasJuego(int idJuego);
 };
 
 #endif //CASINO_CASINO_H
