@@ -18,6 +18,8 @@ Casino::Casino() {
     juegosDisponibles.push_back(juego2);
     auto *slots = new Slots();
     juegosDisponibles.push_back(slots);
+    auto *caraOSello = new CaraOSello();  // Create the new game
+    juegosDisponibles.push_back(caraOSello);  // Add it to available games
 }
 
 void Casino::agregarJugador() {
@@ -157,19 +159,16 @@ float Casino::convertirPesosAGonzos(float dinero) {
     return (dinero / 100);
 }
 
+// New method to show rules for a specific game
+void Casino::mostrarReglasJuego(int idJuego) {
+    if (idJuego > juegosDisponibles.size() || idJuego < 1) {
+        throw std::domain_error("El juego seleccionado no existe\n");
+    }
+
+    Juego* pJuego = juegosDisponibles.at(idJuego - 1);
+    pJuego->mostrarReglas();
+}
 
 Casino::~Casino() {
     // Se libera la memoria del jugadores y de juegos
-    // Simplifica iteracion en el mapa for(map<long, Jugador*>::iterator it = jugadoresMap.begin();
-    for (auto &it : jugadoresMap) {
-        Jugador *jugadorTemp = jugadoresMap[it.first];
-        delete jugadorTemp;
-    }
-
-    // Simplificación del for
-    // for(int i=0; i< juegosDisponibles.size(); i++)
-    for (auto juegoTemp : juegosDisponibles) {
-        delete juegoTemp;
-    }
-    cout << "Termine de llamar destructor de casino \n";
-}
+    // Simplifica iteracion en

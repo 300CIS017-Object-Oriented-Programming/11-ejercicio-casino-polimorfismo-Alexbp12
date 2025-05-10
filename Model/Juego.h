@@ -21,6 +21,8 @@ public:
 
     virtual float jugar(float gonzosApostar) = 0;
 
+    // New method to show game rules
+    virtual void mostrarReglas() = 0;
 
 };
 

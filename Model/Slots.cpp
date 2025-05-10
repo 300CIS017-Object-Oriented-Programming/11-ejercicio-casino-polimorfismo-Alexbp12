@@ -32,3 +32,13 @@ float Slots::calcularResultado(float gonzosApostar) {
         return 0;
     }
 }
+
+void Slots::mostrarReglas() {
+    cout << "=== REGLAS DE SLOTS ===" << endl;
+    cout << "1. Se generan 3 números aleatorios entre 1 y 7." << endl;
+    cout << "2. Si los 3 números son iguales, el jugador gana 7 veces lo apostado." << endl;
+    cout << "3. Si obtiene una escalera (números consecutivos en orden ascendente o descendente), gana 1.5 veces lo apostado." << endl;
+    cout << "4. Si obtiene tres 7's, gana 2 veces lo apostado." << endl;
+    cout << "5. Si no obtiene ninguna combinación ganadora, pierde toda su apuesta." << endl;
+    cout << "6. ¡Buena suerte!" << endl;
+}
